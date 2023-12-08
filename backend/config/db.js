@@ -4,7 +4,7 @@ dotenv.config({ path: './.env' });
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb+srv://7twik:zKqW0UzgQO3G3iMy@cluster0.sjxr9uv.mongodb.net/qr");
+    await mongoose.connect("mongodblink");
     console.log("Database is connected");
   } catch (error) {
     console.error(error.message);
