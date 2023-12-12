@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import QRCode from 'qrcode'
+import Scan from './Scan'
 
 
 function App() {
@@ -24,7 +25,9 @@ function App() {
 
 // With async/await
 const generateQR = async(text) => {
-  var qrr=await QRCode.toDataURL(text,{type: "png"});
+  const obj = {name: "text", profession: text, city: "New York"};
+  const myJSON = JSON.stringify(obj);
+  var qrr=await QRCode.toDataURL(myJSON,{type: "png"});
   setQr(qrr);
   try {
 
@@ -75,7 +78,8 @@ const generateQR = async(text) => {
       <button onClick={click2}>Send Email</button>
       <br />
       {success && <div><img src={qr} alt="qr" /></div>}
-
+      <br/>
+      <Scan />
     </>
   )
 }
