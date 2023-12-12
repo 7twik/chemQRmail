@@ -29,16 +29,7 @@ function Scan(){
    }
   return (
     <div>
-        <button color="secondary" onClick={onScanFile}>Scan Qr Code</button>
-                        <QrReader
-                          ref={qrRef}
-                          delay={300}
-                          style={{width: '100%'}}
-                          onError={handleErrorFile}
-                          onScan={handleScanFile}
-                          legacyMode
-                        />
-                        <h3>Scanned Code: {scanResultFile}</h3>
+        
                       
                          <h3>Qr Code Scan by Web Cam</h3>
                          <QrReader

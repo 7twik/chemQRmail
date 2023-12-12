@@ -25,7 +25,7 @@ function App() {
 
 // With async/await
 const generateQR = async(text) => {
-  const obj = {name: "text", profession: text, city: "New York"};
+  const obj = {name: text, kitType: "text", Pno: "1234567890", email: "email@email.com", category:"category"};
   const myJSON = JSON.stringify(obj);
   var qrr=await QRCode.toDataURL(myJSON,{type: "png"});
   setQr(qrr);
